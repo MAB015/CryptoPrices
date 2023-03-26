@@ -1,0 +1,7 @@
+.footer {
+    @include h-and-f("f");
+}
+
+.boton--contacto {
+    @include boton();
+}

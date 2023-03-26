@@ -1,0 +1,25 @@
+.header {
+    @include h-and-f("h");
+}
+
+.logo-cryptoprices a img {
+    width: auto;
+    height: 40px;
+}
+
+.nav--header ul {
+    display: none;
+    li {
+        list-style: none;
+        margin-right: 50px;
+
+    }
+    a {
+        color: $color-variacion;
+        @include titulos($fuente-secundaria);
+        @include font-size(24px);
+    }
+    @include media(desktop-s) {
+        display: flex;
+    }
+}

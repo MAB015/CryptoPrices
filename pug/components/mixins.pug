@@ -1,0 +1,6 @@
+mixin caja--con-fondo-grande (imagen, titulo, contenido)
+	a(class="caja--con-fondo caja--grande")
+		.caja__imagen: img(src="../../images/"+imagen, alt=""+titulo)
+		.caja--con-fondo__contenido
+			h2=titulo
+			p=contenido

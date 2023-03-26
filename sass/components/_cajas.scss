@@ -1,0 +1,41 @@
+.caja--con-fondo {
+	display: block;
+    margin-top: 30px;
+	box-shadow: none;
+	position: relative;
+	overflow: hidden;
+	img {
+		display: block;
+		max-width: 100%;
+		max-height: auto;
+        opacity: 0.8;
+		object-fit: contain;
+	}
+	&__contenido {
+		padding: 0 50px;
+		position: absolute;
+		text-align: center;
+		color: $color-claro;
+		p {
+			color: $color-claro;
+		}
+		h3 {
+			color: $color-claro;
+		}
+	}
+}
+
+.caja--grande {
+	max-width: 100%;
+	height: 350px;
+    display: flex;
+    justify-content: center;
+	h2 {
+		@include titulos($fuente-secundaria);
+		@include font-size(32px);
+	}
+	.caja--con-fondo__contenido {
+		padding-top: 10px;
+
+	}
+}

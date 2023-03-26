@@ -1,0 +1,6 @@
+.boton--ver-precios {
+    height: 100px;
+    justify-self: center;
+    @include boton();
+    @include font-size(32px);
+}
