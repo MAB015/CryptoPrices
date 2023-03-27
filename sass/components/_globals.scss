@@ -40,6 +40,7 @@ $borde: 2px solid $color-variacion;
 @mixin boton($size) {
 	border-radius: 8px;
 	padding: 5px 25px;
+	cursor: pointer;
 	@include gradientDirection("right");
 	@include titulos($fuente-secundaria, $size, $color-claro);
 	&:hover {

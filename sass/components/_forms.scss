@@ -1,0 +1,34 @@
+#form-comment {
+    display: flex;
+    flex-direction: column;
+
+    input[type="submit"],
+    button {
+        align-self: flex-start;
+        @include boton(16px);
+    }
+    
+    input[type="text"],
+    textarea {   
+        margin-bottom: 20px;     
+        padding: 20px;
+        border: none;
+        background-color: darken($color-variacion, 25%);
+        @include titulos($fuente-primaria, 16px, $color-claro);
+    }
+    
+    input[type="text"]:focus,
+    textarea:focus {
+        outline: none;
+        box-shadow: 0 0 5px $color-variacion;
+    }
+    
+    form {
+        margin: 50px;
+        input,
+        textarea {
+            margin-bottom: 20px;
+        }
+        @include titulos($fuente-primaria, 16px, $color-claro);
+    }
+}

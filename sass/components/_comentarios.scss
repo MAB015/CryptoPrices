@@ -1,0 +1,14 @@
+.comentario-card {
+    margin-top: 20px;
+    padding-bottom: 10px;
+    border-bottom: $borde;
+
+    &__texto {
+        color: $color-claro;
+    }
+
+    &__date {
+        color: $color-variacion;
+    }
+}
+

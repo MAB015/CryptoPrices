@@ -8,16 +8,22 @@ class Comentario {
 
     agregarComentario() {
         const comentario = document.createElement("div");
-        comentario.classList.add("comment");
+        comentario.setAttribute("class","comentario-card");
 
         const comentarioTexto = document.createElement("p");
+        comentarioTexto.setAttribute("class","comentario-card__texto");
         comentarioTexto.textContent = `${this.usuario} dijo: ${this.texto}`;
         comentario.appendChild(comentarioTexto);
 
-        const commentDateElement = document.createElement("span");
-        commentDateElement.classList.add("comment-date");
-        commentDateElement.textContent = this.fecha.toLocaleDateString();
-        comentario.appendChild(commentDateElement);
+        const fechaComentario = document.createElement("span");
+        fechaComentario.setAttribute("class","comentario-card__date");
+        fechaComentario.textContent = this.fecha.toLocaleDateString();
+        comentario.appendChild(fechaComentario);
+
+        // const botonEliminarComentario = document.createElement("button");
+        // botonEliminarComentario.setAttribute("onclick", eliminarComentario());
+        // botonEliminarComentario.textContent = "Eliminar";
+        // comentario.appendChild(botonEliminarComentario);
 
         // Agregamos el comentario al DOM
         const contenedorComentario = document.querySelector("#comments");

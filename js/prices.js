@@ -95,7 +95,7 @@ function verCryptocurrency() {
         .then(response => response.json())
         .then(datos => {
             const cryptoCurrency = datos.data;
-
+            console.log(cryptoCurrency);
             // Creación de elementos
             const ranking = document.createElement("p");
             const nombre = document.createElement("p");

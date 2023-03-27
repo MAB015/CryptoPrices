@@ -1,0 +1,14 @@
+extend components/template.pug
+block content
+    main.form--container
+        h1.form-title Formulario / Comentario
+        section.form-and-comments
+            form(id="form-comment")
+                label(for="username") Nombre de usuario
+                input(type="text" id="username" name="username")
+                label(for="comment")   Comentario
+                textarea(id="comment" name="comment") 
+                input(type="submit" value="Enviar")
+            section#comments
+                h2 Comentarios:
+    script(src="../js/comments.js") 
