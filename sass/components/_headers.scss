@@ -15,9 +15,7 @@
 
     }
     a {
-        color: $color-variacion;
-        @include titulos($fuente-secundaria);
-        @include font-size(24px);
+        @include titulos($fuente-secundaria, 24px, $color-variacion );
     }
     @include media(desktop-s) {
         display: flex;

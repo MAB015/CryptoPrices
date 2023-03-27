@@ -4,19 +4,23 @@
 $fuente-primaria: 'Lato', sans-serif;
 $fuente-secundaria: 'Oswald', sans-serif;
 $color-primario: #333333;
-$color-secundario: #8841DA;
+$color-secundario: #2d2d2d;
 $color-variacion: #0CA183;
 $color-claro: #FFF;
 $borde: 2px solid $color-variacion;
 
 // Mixins
-@mixin titulos($fuente) {
+@mixin titulos($fuente, $size, $color) {
 	@if $fuente ==$fuente-primaria {
 		font-family: $fuente-primaria;
+		font-size: $size;
+		color: $color;
 	} @else {
-		font-family: $fuente-secundaria;
 		text-transform: uppercase;
 		font-weight: 700;
+		font-family: $fuente-secundaria;
+		font-size: $size;
+		color: $color;
 	}
 }
 
@@ -33,12 +37,11 @@ $borde: 2px solid $color-variacion;
 	@return $remSize * 1rem;
 }
 
-@mixin boton() {
-	color: $color-claro;
+@mixin boton($size) {
 	border-radius: 8px;
 	padding: 5px 25px;
 	@include gradientDirection("right");
-	@include titulos($fuente-secundaria);
+	@include titulos($fuente-secundaria, $size, $color-claro);
 	&:hover {
 		@include gradientDirection("left");
 	}
@@ -73,9 +76,7 @@ $borde: 2px solid $color-variacion;
 body {
 	margin: 0;
 	background-color: rgb(5, 23, 1);
-	color: $color-claro;
-	@include titulos($fuente-primaria);
-	@include font-size(18px);
+	@include titulos($fuente-primaria, 18px, $color-claro);
 }
 
 main {

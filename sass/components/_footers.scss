@@ -3,5 +3,5 @@
 }
 
 .boton--contacto {
-    @include boton();
+    @include boton(24px);
 }

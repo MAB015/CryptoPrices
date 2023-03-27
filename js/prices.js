@@ -20,19 +20,22 @@ fetch(`${urlCoincapApi}/assets?limit=10`)
         // Crear la cabecera
         const tableHeader = document.createElement('tr')
         // Crear las columnas de la cabecera
-        const imgHeader = document.createElement('th')
+        const rankHeader = document.createElement('th')
+        // const imgHeader = document.createElement('th')
         const nameHeader = document.createElement('th')
+        nameHeader.colSpan = 2
         const symbolHeader = document.createElement('th')
         const priceUsdHeader = document.createElement('th')
         const marketCapUsdHeader = document.createElement('th')
         // Agregar los textos a las columnas
-        imgHeader.innerText = ' ';
-        nameHeader.innerText = 'Name';
-        symbolHeader.innerText = 'Symbol'
-        priceUsdHeader.innerText = 'Price'
-        marketCapUsdHeader.innerText = 'Market Cap Usd'
+        rankHeader.innerText = 'RANK';
+        // imgHeader.innerText = ' ';
+        nameHeader.innerText = 'NAME';
+        symbolHeader.innerText = 'SYMBOL'
+        priceUsdHeader.innerText = 'PRICE'
+        marketCapUsdHeader.innerText = 'MARKET CAP USD'
         // Agregue las columnas a la cabecera
-        tableHeader.appendChild(imgHeader)
+        tableHeader.appendChild(rankHeader)
         tableHeader.appendChild(nameHeader)
         tableHeader.appendChild(symbolHeader)
         tableHeader.appendChild(priceUsdHeader)
@@ -47,19 +50,22 @@ fetch(`${urlCoincapApi}/assets?limit=10`)
             // Crear Fila
             const cryptoCurrencyRow = document.createElement('tr');
             // Crear las columnas
+            const rankHeader = document.createElement('td')
             const imgHeader = document.createElement('td')
             const nameHeader = document.createElement('td');
             const symbolHeader = document.createElement('td');
             const priceUsdHeader = document.createElement('td');
             const marketCapUsdHeader = document.createElement('td');
             // Agregue los datos a la columna
+            rankHeader.innerText = cryptoCurrencyArray[i].rank;
             imgHeader.innerHTML = `<img src="${urlIcons}/${cryptoCurrencyArray[i].symbol.toLowerCase()}@2x.png" alt="${cryptoCurrencyArray[i].name}"></img>`;
             nameHeader.innerText = cryptoCurrencyArray[i].name;
             symbolHeader.innerText = cryptoCurrencyArray[i].symbol;
             priceUsdHeader.innerText = cryptoCurrencyArray[i].priceUsd;
             marketCapUsdHeader.innerText = cryptoCurrencyArray[i].marketCapUsd;
             // Agregar columnas a la fila
-            cryptoCurrencyRow.appendChild(imgHeader)
+            cryptoCurrencyRow.appendChild(rankHeader);
+            cryptoCurrencyRow.appendChild(imgHeader);
             cryptoCurrencyRow.appendChild(nameHeader);
             cryptoCurrencyRow.appendChild(symbolHeader);
             cryptoCurrencyRow.appendChild(priceUsdHeader);

@@ -31,8 +31,7 @@
     display: flex;
     justify-content: center;
 	h2 {
-		@include titulos($fuente-secundaria);
-		@include font-size(32px);
+		@include titulos($fuente-secundaria, 32px, $color-claro);
 	}
 	.caja--con-fondo__contenido {
 		padding-top: 10px;
