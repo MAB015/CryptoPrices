@@ -496,6 +496,35 @@ main {
   }
 }
 
+.buscar {
+  margin: 0 20px;
+}
+.buscar #cryptoCurrency-name {
+  width: 200px;
+  color: #FFF;
+  background-color: #075a49;
+}
+.buscar #cryptoCurrency-name::-moz-placeholder {
+  color: #b3b3b3;
+}
+.buscar #cryptoCurrency-name::placeholder {
+  color: #b3b3b3;
+}
+.buscar button {
+  width: 130px;
+  border-radius: 8px;
+  padding: 5px 25px;
+  background: linear-gradient(271.47deg, #035D4E 14.62%, #0CA183 68.13%);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: "Oswald", sans-serif;
+  font-size: 14px;
+  color: #FFF;
+}
+.buscar button:hover {
+  background: linear-gradient(-271.47deg, #035D4E 14.62%, #0CA183 68.13%);
+}
+
 .footer {
   display: flex;
   width: 100%;

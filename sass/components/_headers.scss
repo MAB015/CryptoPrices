@@ -21,3 +21,20 @@
         display: flex;
     }
 }
+
+.buscar {
+    margin: 0 20px;
+
+    #cryptoCurrency-name {
+        width: 200px;
+        color: $color-claro;
+        background-color: darken($color: $color-variacion, $amount: 15);
+        &::placeholder {
+            color: darken($color: $color-claro, $amount: 30)
+        }
+    }
+    button {
+        width: 130px;
+        @include boton(14px)
+    }
+}
