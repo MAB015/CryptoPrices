@@ -3,22 +3,25 @@ const urlCoincapApi = "https://api.coincap.io/v2"
 // Api Icons URL
 const urlIcons = "https://static.coincap.io/assets/icons"
 
-console.log("Hola");
+// const cryptoCurrencyValue = document.querySelector("#cryptoCurrency-name");
+console.log("HolaFiltro")
+
 
 function verCryptocurrency() {
-    console.log("Hola");
-    // Obtener el valor del input
-    const cryptoCurrency = document.getElementById("cryptoCurrency-name").value.toLowerCase();
-    // Obtener el elemento donde se mostrará el resultado
-    const res = document.getElementById("table-resultado-price");
+    console.log("Hola2");
+    // // Obtener el valor del input
+    const cryptoCurrencyValue = document.getElementById("cryptoCurrency-name").value.toLowerCase();
+    // // Obtener el elemento donde se mostrará el resultado
+    const resp = document.getElementById("table-resultado-price");
+    // const resp = document.querySelector("#table-resultado-price");
     // Limpiando el resultado
-    res.innerHTML = "";
+    // res.innerHTML = "";
     // Llamando a la API
-    fetch(`${urlCoincapApi}/assets/${cryptoCurrency}`)
+    fetch(`${urlCoincapApi}/assets/${cryptoCurrencyValue}`)
         .then(response => response.json())
         .then(datos => {
-            const cryptoCurrency = datos.data;
-            console.log(cryptoCurrency);
+            const cryptoCurrencyData = datos.data;
+            console.log(cryptoCurrencyData);
             // Creación de elementos
             const ranking = document.createElement("p");
             const nombre = document.createElement("p");
@@ -28,21 +31,24 @@ function verCryptocurrency() {
             const volumeUsd24Hr = document.createElement("p");
 
             // Asignación a elementos
-            ranking.innerHTML = "Ranking: " + cryptoCurrency.rank;
-            nombre.innerText = cryptoCurrency.name + " (" + cryptoCurrency.symbol + ")";
-            imagen.src = `${urlIcons}/${cryptoCurrency.symbol.toLowerCase()}@2x.png`;
-            imagen.alt = `${cryptoCurrency.name}`;
-            priceUsd.innerHTML = "Precio USD: " + cryptoCurrency.priceUsd;
-            marketCapUsd.innerHTML = "Mercado Usd: " + cryptoCurrency.marketCapUsd;
-            volumeUsd24Hr.innerHTML = "Volumen 24H: " + cryptoCurrency.volumeUsd24Hr;
+            ranking.innerHTML = "Ranking: " + cryptoCurrencyData.rank;
+            nombre.innerText = cryptoCurrencyData.name + " (" + cryptoCurrencyData.symbol + ")";
+            imagen.src = `${urlIcons}/${cryptoCurrencyData.symbol.toLowerCase()}@2x.png`;
+            imagen.alt = `${cryptoCurrencyData.name}`;
+            priceUsd.innerHTML = "Precio USD: " + cryptoCurrencyData.priceUsd;
+            marketCapUsd.innerHTML = "Mercado Usd: " + cryptoCurrencyData.marketCapUsd;
+            volumeUsd24Hr.innerHTML = "Volumen 24H: " + cryptoCurrencyData.volumeUsd24Hr;
 
             // Agregando Elementos
-            res.appendChild(ranking);
-            res.appendChild(nombre);
-            res.appendChild(imagen);
-            res.appendChild(priceUsd);
-            res.appendChild(marketCapUsd);
-            res.appendChild(volumeUsd24Hr);
+            resp.appendChild(ranking);
+            resp.appendChild(nombre);
+            resp.appendChild(imagen);
+            resp.appendChild(priceUsd);
+            resp.appendChild(marketCapUsd);
+            resp.appendChild(volumeUsd24Hr);
+
         })
         .catch(error => console.error(error))
+
+        // location.href = "../html/filtro.html"
 }

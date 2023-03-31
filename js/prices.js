@@ -7,6 +7,7 @@ const urlIcons = "https://static.coincap.io/assets/icons"
 const sectionTablePrices = document.querySelector(".table-prices"); 
 
 
+
 // Fetch
 fetch(`${urlCoincapApi}/assets?limit=10`)
     .then(response => response.json())
@@ -79,3 +80,6 @@ fetch(`${urlCoincapApi}/assets?limit=10`)
     })
 
     .catch(error => console.error(error));
+
+
+
